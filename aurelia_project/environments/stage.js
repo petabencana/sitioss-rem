@@ -30,7 +30,7 @@ export default {
     }
   ],
   mapConfig: {
-    region: 'jbd',
+    region: 'ID-JK',
     reports_refresh: 60000, // Reports will refresh every 60 seconds
     bounds: {
       sw: [-6.733, 106.480],
