@@ -33,7 +33,7 @@ export class API {
   getFloods = () => new Promise((resolve, reject) => {
     // Authentication headers
     let auth = { headers: { 'Authorization': 'Bearer ' + localStorage.getItem('id_token') } };
-    return this.http.fetch(`${DATA_URL}/floods?city=ID-JK`, auth)
+    return this.http.fetch(`${DATA_URL}/floods?admin=ID-JK`, auth)
     .then((response) => {
       if (response.status >= 400) reject(new Error('Unexpected error retrieving floods'));
       response.json().then((data) => resolve(convertTopoToGeo(data)));
@@ -47,7 +47,7 @@ export class API {
   getFloodStates = () => new Promise((resolve, reject) => {
     // Authentication headers
     let auth = { headers: { 'Authorization': 'Bearer ' + localStorage.getItem('id_token') } };
-    return this.http.fetch(`${DATA_URL}/floods/states?city=ID-JK&minimum_state=1`, auth)
+    return this.http.fetch(`${DATA_URL}/floods/states?admin=ID-JK&minimum_state=1`, auth)
     .then((response) => {
       if (response.status >= 400) reject(new Error('Unexpected error retrieving flood states'));
       response.json().then((data) => resolve(data));
@@ -89,7 +89,7 @@ export class API {
   getReports = () => new Promise((resolve, reject) => {
     // Authentication headers
     let auth = { headers: { 'Authorization': 'Bearer ' + localStorage.getItem('id_token') } };
-    return this.http.fetch(`${DATA_URL}/reports?city=ID-JK`, auth)
+    return this.http.fetch(`${DATA_URL}/reports?admin=ID-JK`, auth)
     .then((response) => {
       if (response.status >= 400) reject(new Error('Unexpected error retrieving flood reports'));
       response.json().then((data) => resolve(convertTopoToGeo(data)));
