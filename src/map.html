@@ -27,7 +27,7 @@
         </div>
         <div class="col-md-4 text-center">
           <div class="btn-group">
-            <button click.delegate="refreshFloodStates()" class="btn btn-primary">Perbarui semua banjir</button>
+            <button click.delegate="updateFloodAreas()" class="btn btn-primary">Perbarui semua banjir</button>
             <button click.delegate="clearFloodStates()" class="btn btn-danger" if.bind="isEditor">Hapus Semua Banjir</button>
           </div>
         </div>
@@ -85,10 +85,9 @@
             <td>${area.properties.geom_id}</td>
             <td>${area.properties.reports}</td>
             <td>
-              <select value.bind="area.properties.state" if.bind="isEditor && area === selectedArea"
-                change.delegate="floodStateChanged(area)">
-                <option repeat.for="state of floodStates" model.bind="state.level">${state.severity}</option>
-              </select>
+              <input type="number" value.bind="area.properties.state" class="form-control"
+                change.delegate="floodStateChanged(area)"
+                if.bind="isEditor && area === selectedArea" />
               <span if.bind="!isEditor || area !== selectedArea">${area.properties.state | floodState}</span>
             </td>
           </tr>

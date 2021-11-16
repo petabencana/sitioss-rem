@@ -30,16 +30,35 @@ export class API {
   }
 
   // Get floods as topojson, return geojson
-  getFloods = () => new Promise((resolve, reject) => {
+  getFloods = (city, minimumState) => new Promise((resolve, reject) => {
     // Authentication headers
     let auth = { headers: { 'Authorization': 'Bearer ' + localStorage.getItem('id_token') } };
-    return this.http.fetch(`${DATA_URL}/floods?city=ID-JK`, auth)
+
+    let url = `${DATA_URL}/floods?admin=ID-JK&parent=${city}`;
+    if (minimumState) {
+      url += `&minimum_state=${minimumState}`; }
+    return this.http.fetch(url, auth)
     .then((response) => {
       if (response.status >= 400) reject(new Error('Unexpected error retrieving floods'));
       response.json().then((data) => resolve(convertTopoToGeo(data)));
     })
     .catch((err) => {
       reject(new Error('Error retrieving floods', err));
+    });
+  });
+
+  getAllPlaces = () => new Promise((resolve, reject) => {
+    // Authentication headers
+    let auth = { headers: { 'Authorization': 'Bearer ' + localStorage.getItem('id_token') } };
+
+    const url = `${DATA_URL}/floods/places`;
+    return this.http.fetch(url, auth)
+    .then((response) => {
+      if (response.status >= 400) reject(new Error('Unexpected error retrieving places'));
+      response.json().then((data) => resolve(data.result));
+    })
+    .catch((err) => {
+      reject(new Error('Error retrieving places', err));
     });
   });
 
