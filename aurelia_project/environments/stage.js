@@ -1,6 +1,6 @@
 export default {
   debug: false,
-  testing: true,
+  testing: false,
   dataUrl: 'https://data-dev.petabencana.id',
   baseUrl: 'https://rem-dev.petabencana.id',
   AUTH0_CLIENT_ID: 'hla07C0C009nXLXhov2Vaqxx7Nj4PIpz',
