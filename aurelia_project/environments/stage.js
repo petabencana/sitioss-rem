@@ -8,27 +8,27 @@ export default {
   floodStates: [
     {
       level: null,
-      severity: 'Clear',
+      severity: 'Tidak banjir',
       levelDescription: 'NO FLOODING'
     },
     {
       level: 1,
-      severity: 'Unknown',
+      severity: 'Hati-hati!',
       levelDescription: 'AN UNKNOWN LEVEL OF FLOODING - USE CAUTION -'
     },
     {
       level: 2,
-      severity: 'Minor',
+      severity: '10 cm - 70 cm',
       levelDescription: 'FLOODING OF BETWEEN 10 and 70 CENTIMETERS'
     },
     {
       level: 3,
-      severity: 'Moderate',
+      severity: '71 cm - 150 cm',
       levelDescription: 'FLOODING OF BETWEEN 71 and 150 CENTIMETERS'
     },
     {
       level: 4,
-      severity: 'Severe',
+      severity: '> 150 cm',
       levelDescription: 'FLOODING OF OVER 150 CENTIMETERS'
     }
   ],
