@@ -1,5 +1,5 @@
 export default {
-  debug: true,
+  debug: false,
   testing: true,
   dataUrl: 'https://data-dev.petabencana.id',
   baseUrl: 'https://rem-dev.petabencana.id',
