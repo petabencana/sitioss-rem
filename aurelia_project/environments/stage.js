@@ -3,8 +3,8 @@ export default {
   testing: false,
   dataUrl: 'https://data-dev.petabencana.id',
   baseUrl: 'https://rem-dev.petabencana.id',
-  AUTH0_CLIENT_ID: 'hla07C0C009nXLXhov2Vaqxx7Nj4PIpz',
-  AUTH0_DOMAIN: 'petabencana-dev.au.auth0.com',
+  AUTH0_CLIENT_ID: '1h87brpc4j8jr2h7q4b93kqq5c',
+  AUTH0_DOMAIN: 'devpb.auth.ap-southeast-1.amazoncognito.com',
   floodStates: [
     {
       level: null,
