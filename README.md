@@ -1,5 +1,5 @@
-# cognicity-rem-v3
-Cognicity REM Web Client v3
+# sitioss-rem-v3
+Siti OSS REM Web Client v3
 [![Build Status](https://travis-ci.org/urbanriskmap/cognicity-rem.svg?branch=master)](https://travis-ci.org/urbanriskmap/cognicity-rem)
 
 
